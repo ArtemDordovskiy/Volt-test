@@ -7,6 +7,14 @@ class MainController < Volt::ModelController
     # Add code for when the about view is loaded
   end
 
+  def ruby_news
+
+  end
+
+  def rails_news
+
+  end
+
   private
 
   # the main template contains a #template binding that shows another
