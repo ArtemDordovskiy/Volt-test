@@ -1,4 +1,8 @@
+require 'nokogiri'
+require 'open-uri'
+
 class MainController < Volt::ModelController
+
   def index
     # Add code for when the index view is loaded
   end
@@ -8,11 +12,14 @@ class MainController < Volt::ModelController
   end
 
   def ruby_news
-
+    ruby_news_page = Nokogiri::HTML('https://www.ruby-lang.org/en/news/')
+    ruby_news_page.css('.post') do |node|
+      page._ruby_news << { title: node.css('h3 a').text }
+    end
   end
 
   def rails_news
-
+    rails_news_url = 'http://weblog.rubyonrails.org/'
   end
 
   private

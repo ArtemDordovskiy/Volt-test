@@ -2,4 +2,6 @@
   Rails News
 <:Body>
   <h3>Rails News</h3>
-  <p>Some text</p>
+  {{ page._rails_news.each do |item| }}
+    <p><a href="{{ item._link }}">{{ item._title }}</a></p>
+  {{ end }}
